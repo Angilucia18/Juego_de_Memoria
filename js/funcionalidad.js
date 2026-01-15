@@ -1,4 +1,3 @@
-function inicio(){
 // Game state
     const gameState = {
       mode: 'single', // 'single' or 'two'
@@ -18,9 +17,8 @@ function inicio(){
     };
     
     // Audio elements
-    const successAudio = new Audio('http://localhost/juego3/audios/logro.mp3');
-    const errorAudio = new Audio('http://localhost/juego3/audios/error2.mp3');
-    
+    const successAudio = new Audio('https://juego-de-memoria-sooty.vercel.app/imagenes/audios/logro.mp3');
+    const errorAudio = new Audio('https://juego-de-memoria-sooty.vercel.app/imagenes/audios/error.mp3');
     
     // DOM elements
     const gameBoardEl = document.getElementById('game-board');
@@ -49,27 +47,27 @@ function inicio(){
     
     // Card vocabulary pairs - images and words
     const vocabularyPairs = [
-      { word: 'cat', image: 'http://localhost/juego3/imagenes/cat.jpg' },
-      { word: 'dog', image: 'http://localhost/juego3/imagenes/dog.png' },
-      { word: 'bird', image: 'http://localhost/juego3/imagenes/bird.png' },
-      { word: 'fish', image: 'http://localhost/juego3/imagenes/fish.jpg' },
-      { word: 'apple', image: 'http://localhost/juego3/imagenes/apple.jpg' },
-      { word: 'banana', image: 'http://localhost/juego3/imagenes/banana.jpg' },
-      { word: 'book', image: 'http://localhost/juego3/imagenes/book.png' },
-      { word: 'chair', image: 'http://localhost/juego3/imagenes/chair.jpg' },
-      { word: 'house', image: 'http://localhost/juego3/imagenes/house.png' },
-      { word: 'car', image: 'http://localhost/juego3/imagenes/car.jpg' },
-      { word: 'tree', image: 'http://localhost/juego3/imagenes/tree.jpg' },
-      { word: 'sun', image: 'http://localhost/juego3/imagenes/sun.jpg' },
-      { word: 'moon', image: 'http://localhost/juego3/imagenes/moon.jpg' },
-      { word: 'star', image: 'http://localhost/juego3/imagenes/star.jpg' },
-      { word: 'flower', image: 'http://localhost/juego3/imagenes/flower.jpg' },
-      { word: 'water', image: 'http://localhost/juego3/imagenes/water.jpg' },
-      { word: 'ball', image: 'http://localhost/juego3/imagenes/ball.jpg' },
-      { word: 'hat', image: 'http://localhost/juego3/imagenes/hat.jpg' },
-      { word: 'shoe', image: 'http://localhost/juego3/imagenes/shoe.jpg' },
-      { word: 'pencil', image: 'http://localhost/juego3/imagenes/pencil.png' },
-      { word: 'clock', image: 'http://localhost/juego3/imagenes/clock.jpg' },
+      { word: 'cat', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/cat.jpg' },
+      { word: 'dog', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/dog.png' },
+      { word: 'bird', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/bird.png' },
+      { word: 'fish', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/fish.jpg' },
+      { word: 'apple', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/apple.jpg' },
+      { word: 'banana', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/banana.jpg' },
+      { word: 'book', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/book.png' },
+      { word: 'chair', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/chair.jpg' },
+      { word: 'house', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/house.png' },
+      { word: 'car', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/car.jpg' },
+      { word: 'tree', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/tree.jpg' },
+      { word: 'sun', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/sun.jpg' },
+      { word: 'moon', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/moon.jpg' },
+      { word: 'star', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/start.jpg' },
+      { word: 'flower', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/flower.jpg' },
+      { word: 'water', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/water.jpg' },
+      { word: 'ball', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/ball.jpg' },
+      { word: 'hat', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/hat.jpg' },
+      { word: 'shoe', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/shoe.jpg' },
+      { word: 'pencil', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/pencil.png' },
+      { word: 'clock', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/clock.jpg' },
     ];
     
     // Event listeners
@@ -505,4 +503,4 @@ function inicio(){
     
     // Start initialization
     init();
-    }
+    
