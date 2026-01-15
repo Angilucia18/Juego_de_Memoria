@@ -60,7 +60,7 @@
       { word: 'tree', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/tree.jpg' },
       { word: 'sun', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/sun.jpg' },
       { word: 'moon', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/moon.jpg' },
-      { word: 'star', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/start.jpg' },
+      { word: 'star', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/star.jpg' },
       { word: 'flower', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/flower.jpg' },
       { word: 'water', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/water.jpg' },
       { word: 'ball', image: 'https://juego-de-memoria-sooty.vercel.app/imagenes/ball.jpg' },
