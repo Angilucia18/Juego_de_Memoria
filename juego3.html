@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game - English Vocabulary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="http://localhost/juego3/css/estilo.css" id="app-style"></link>
+  
+</head>
+<body class="p-4">
+  <div class="container mx-auto max-w-6xl">
+    <!-- Game Header -->
+    <header class="mb-6 text-center">
+      <div style="text-align: center; " class="mt-0">
+        <img src="http://localhost/juego3/imagenes/logo.png" alt="Logo del juego" style="max-width: 200px; margin-left: 500px; margin-top: 0;" />
+      </div>
+      <p class="text-lg text-gray-600 mt-0">¡Aprende inglés mientras te diviertes!</p>
+    </header>
+    
+    <!-- Game Controls -->
+    <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
+      <div class="flex flex-wrap justify-between items-center">
+        <div class="game-mode-selector mb-3 md:mb-0">
+          <h2 class="text-xl font-bold text-gray-700 mb-2">Modo de juego:</h2>
+          <div class="flex space-x-3">
+            <button id="single-player-btn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition active">
+              <i class="fas fa-user mr-2"></i>1 Jugador
+            </button>
+            <button id="two-player-btn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
+              <i class="fas fa-users mr-2"></i>2 Jugadores
+            </button>
+          </div>
+        </div>
+        
+        <div class="timer-container hidden md:flex items-center text-xl font-bold text-gray-700" id="timer-display">
+          <i class="fas fa-stopwatch mr-2 text-indigo-600"></i>
+          <span id="timer">00:00</span>
+        </div>
+        
+        <div class="controls">
+          <button id="start-game-btn" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition text-lg">
+            <i class="fas fa-play mr-2"></i>Comenzar
+          </button>
+          <button id="restart-game-btn" class="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition text-lg ml-3">
+            <i class="fas fa-sync-alt mr-2"></i>Reiniciar
+          </button>
+        </div>
+      </div>
+      
+      <!-- Two Player Scoreboard -->
+      <div id="scoreboard" class="hidden mt-4 p-3 bg-gray-100 rounded-lg">
+        <div class="flex justify-around items-center">
+          <div id="player1-container" class="text-center p-2 rounded-lg bg-white shadow-md">
+            <h3 class="text-lg font-bold text-indigo-600">Jugador 1</h3>
+            <p class="text-3xl font-bold" id="player1-score">0</p>
+          </div>
+          
+          <div class="text-center">
+            <span class="text-xl font-bold">VS</span>
+          </div>
+          
+          <div id="player2-container" class="text-center p-2 rounded-lg bg-white shadow-md">
+            <h3 class="text-lg font-bold text-indigo-600">Jugador 2</h3>
+            <p class="text-3xl font-bold" id="player2-score">0</p>
+          </div>
+        </div>
+        <div id="turn-indicator" class="text-center mt-3 font-bold text-lg">
+          Turno: <span id="current-player">Jugador 1</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Game Board -->
+    <div id="game-board" class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-7 gap-3 mb-8">
+      <!-- Cards will be generated here -->
+      <div class="card-placeholder text-center p-12 bg-gray-200 text-gray-500 rounded-lg">
+        <i class="fas fa-dice-d6 text-4xl mb-2"></i>
+        <p>Presiona "Comenzar" para jugar</p>
+      </div>
+    </div>
+    
+    <!-- Feedback Message -->
+    <div id="feedback-message" class="feedback-message"></div>
+    
+    <!-- Victory Overlay -->
+    <div id="victory-overlay" class="victory-overlay">
+      <div class="text-center p-8 bg-white rounded-lg shadow-lg max-w-md">
+        <i class="fas fa-trophy text-6xl text-yellow-500 mb-4"></i>
+        <h2 class="text-3xl font-bold text-indigo-600 mb-4" id="victory-title">¡Victoria!</h2>
+        <p class="text-xl text-gray-700 mb-6" id="victory-message"></p>
+        
+        <div id="single-player-results" class="mb-6">
+          <div class="bg-indigo-100 p-3 rounded-lg mb-4">
+            <p class="text-lg">Tiempo: <span id="final-time" class="font-bold">00:00</span></p>
+          </div>
+        </div>
+        
+        <div id="two-player-results" class="mb-6 hidden">
+          <div class="flex justify-around items-center">
+            <div class="text-center">
+              <p class="text-gray-700">Jugador 1</p>
+              <p class="text-3xl font-bold text-indigo-600" id="final-p1-score">0</p>
+            </div>
+            <div class="text-center">
+              <p class="text-gray-700">Jugador 2</p>
+              <p class="text-3xl font-bold text-indigo-600" id="final-p2-score">0</p>
+            </div>
+          </div>
+        </div>
+        
+        <button id="play-again-btn" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition text-lg">
+          <i class="fas fa-redo mr-2"></i>Jugar otra vez
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="http://localhost/juego3/js/funcionalidad.js" id="app-script"></script>
+  
+</body>
+</html>
